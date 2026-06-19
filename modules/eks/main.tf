@@ -1,5 +1,5 @@
 resource "aws_eks_cluster" "example" {
-  name = "terraform_cluster"
+  name = "example"
 
 
   role_arn = aws_iam_role.cluster.arn
