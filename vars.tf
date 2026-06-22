@@ -53,3 +53,8 @@ variable "max_unavailable_nodes" {
   type        = number
   default     = 1
 }
+
+variable "launch_template_name" {
+  description = "The name of the existing launch template to use for the EKS node group"
+  type        = string
+}

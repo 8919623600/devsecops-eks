@@ -8,3 +8,4 @@ node_group_min_size        = 1
 node_group_instance_types  = ["t3.micro"]
 ami                        = "ami-0fcc78c828f981df2"  # Amazon EKS optimized AMI for Kubernetes 1.35
 max_unavailable_nodes      = 1
+launch_template_name       = "Devops-learning-LT"  # Name of the existing launch template

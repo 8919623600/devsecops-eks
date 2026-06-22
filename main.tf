@@ -10,5 +10,6 @@ module "eks" {
   # node_group_instance_types  = var.node_group_instance_types
   ami                        = var.ami
   max_unavailable_nodes      = var.max_unavailable_nodes
+  launch_template_name       = var.launch_template_name
 
 }

@@ -1,7 +1,3 @@
-data "aws_security_group" "existing" {
-  name = "Devops-learning-SG"
-}
-
 resource "aws_eks_node_group" "main" {
   cluster_name    = aws_eks_cluster.main.name
   node_group_name = "${var.cluster_name}-${var.env}-node-group"
