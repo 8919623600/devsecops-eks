@@ -12,5 +12,5 @@ resource "aws_launch_template" "node" {
   }
 
   # simple bootstrap for EKS managed nodes - cluster name injected
-#   user_data = base64encode("#!/bin/bash\n/etc/eks/bootstrap.sh ${aws_eks_cluster.main.name}\n")
+  user_data = base64encode("#!/bin/bash\n/etc/eks/bootstrap.sh ${aws_eks_cluster.main.name}\n")
 }
