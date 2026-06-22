@@ -5,6 +5,6 @@ subnet_ids                 = ["subnet-01a4e02b3d7443a83", "subnet-08640855b05a30
 node_group_desired_size    = 1
 node_group_max_size        = 2
 node_group_min_size        = 1
-node_group_instance_types  = ["t3.micro"]
+# node_group_instance_types  = ["t3.micro"]
 ami                        = "ami-0fcc78c828f981df2"  # Amazon EKS optimized AMI for Kubernetes 1.35
 max_unavailable_nodes      = 1

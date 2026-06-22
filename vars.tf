@@ -37,11 +37,11 @@ variable "node_group_min_size" {
   default     = 1
 }
 
-variable "node_group_instance_types" {
-  description = "The instance types for the EKS node group"
-  type        = list(string)
-  default     = ["t3.medium"]
-}
+# variable "node_group_instance_types" {
+#   description = "The instance types for the EKS node group"
+#   type        = list(string)
+#   default     = ["t3.medium"]
+# }
 
 variable "ami" {
   description = "The AMI ID for the EKS node group"
