@@ -1,2 +1,2 @@
-cluster_name = "roboshop-test-cluster"
+cluster_name = "robodefense-cluster"
 env = "test"
