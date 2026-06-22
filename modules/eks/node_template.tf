@@ -1,6 +1,6 @@
 data "aws_launch_template" "existing" {
   name = var.launch_template_name
-  user_data = base64encode("#!/bin/bash\nset -o xtrace\n/etc/eks/bootstrap.sh ${aws_eks_cluster.main.name}\n")
+#   user_data = base64encode("#!/bin/bash\nset -o xtrace\n/etc/eks/bootstrap.sh ${aws_eks_cluster.main.name}\n")
 }
 
 # resource "aws_iam_instance_profile" "node" {
