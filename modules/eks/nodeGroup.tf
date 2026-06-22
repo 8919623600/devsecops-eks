@@ -3,7 +3,9 @@ resource "aws_eks_node_group" "main" {
   node_group_name = "${var.cluster_name}-${var.env}-node-group"
   node_role_arn   = aws_iam_role.main.arn
   subnet_ids      = aws_eks_cluster.main.vpc_config[0].subnet_ids
-  ami             = "ami-0fcc78c828f981df2" 
+  ami              = var.ami
+  instance_types   = var.node_group_instance_types
+  
 
   scaling_config {
     desired_size = var.node_group_desired_size
