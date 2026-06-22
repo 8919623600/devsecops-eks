@@ -6,10 +6,10 @@ resource "aws_eks_node_group" "main" {
   instance_types  = var.node_group_instance_types
   capacity_type   = "ON_DEMAND"
 
-  launch_template {
-    id      = data.aws_launch_template.existing.id
-    version = tostring(aws_launch_template_version.with_bootstrap.version_number)
-  }
+#   launch_template {
+#     id      = data.aws_launch_template.existing.id
+#     version = $Latest
+#   }
 
   scaling_config {
     desired_size = var.node_group_desired_size
