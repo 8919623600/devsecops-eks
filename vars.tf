@@ -13,3 +13,8 @@ variable "eks_version" {
   type        = string
   default     = "1.35"
 }
+
+variable "subnet_ids" {
+  description = "The subnet IDs for the EKS cluster"
+  type        = list(string)
+}

@@ -5,11 +5,7 @@ resource "aws_eks_cluster" "main" {
   version  = var.eks_version
 
   vpc_config {
-    subnet_ids = [
-      "subnet-01a4e02b3d7443a83",
-      "subnet-08640855b05a30fda",
-      "subnet-0e5b2e2f039a0e722",
-    ]
+    subnet_ids = var.subnet_ids
   }
 
   # Ensure that IAM Role permissions are created before and deleted
