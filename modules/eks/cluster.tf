@@ -4,6 +4,7 @@ resource "aws_eks_cluster" "main" {
   version  = var.eks_version
   
   
+  
 
 
   vpc_config {

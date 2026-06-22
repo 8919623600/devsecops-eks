@@ -47,3 +47,9 @@ variable "ami" {
   description = "The AMI ID for the EKS node group"
   type        = string
 }
+
+variable "max_unavailable_nodes" {
+  description = "The maximum number of nodes that can be unavailable during an update"
+  type        = number
+  default     = 1
+}
