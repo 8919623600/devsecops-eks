@@ -1,6 +1,5 @@
-resource "aws_eks_cluster" "example" {
-  name = "terraform_cluster"
-
+resource "aws_eks_cluster" "main" {
+  name = "${var.cluster_name}.${env}"
 
   role_arn = aws_iam_role.cluster.arn
   version  = "1.35"
