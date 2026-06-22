@@ -4,7 +4,7 @@
 # }
 
 resource "aws_launch_template" "node" {
-  name_prefix   = "${var.cluster_name}-${var.env}-lt"
+  name_prefix   = "${var.cluster_name}-${var.env}-lt-"
   image_id      = var.ami
   # do not hardcode instance_type if you want the node group to control instance types
 #   iam_instance_profile {
