@@ -1,24 +1,6 @@
 data "aws_launch_template" "existing" {
   name = var.launch_template_name
-  user_data = base64encode(<<-EOT
-    #!/bin/bash
-    set -x
-    # send stdout/stderr to /var/log/bootstrap.log and to the console
-    exec > >(tee /var/log/bootstrap.log | logger -t userdata -s 2>/dev/console) 2>&1
-    date
-    echo "Checking for bootstrap script..."
-    if [ -f /etc/eks/bootstrap.sh ]; then
-      echo "Found bootstrap, running with increased kubelet verbosity"
-      /etc/eks/bootstrap.sh ${aws_eks_cluster.main.name} --kubelet-extra-args '--v=4'
-      rc=$?
-      echo "bootstrap.sh exit code: ${rc}"
-      exit ${rc}
-    else
-      echo "/etc/eks/bootstrap.sh not found on AMI" >&2
-      exit 1
-    fi
-  EOT
-  )
+  user_data = base64encodebase64encode("#!/bin/bash\nset -o xtrace\n/etc/eks/bootstrap.sh ${aws_eks_cluster.main.name}\n")
 }
 
 # resource "aws_iam_instance_profile" "node" {
