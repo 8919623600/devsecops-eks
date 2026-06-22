@@ -38,3 +38,14 @@ output "node_group_scaling_config" {
   value = aws_eks_node_group.main.scaling_config
 }
 
+output "instance_count" {
+  value = length(aws_instance.main)
+}
+
+output "instance_ids" {
+  value = [
+    for instance in aws_instance.main : instance.id
+  ]
+}
+
+
