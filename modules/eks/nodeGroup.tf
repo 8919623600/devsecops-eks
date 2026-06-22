@@ -1,12 +1,16 @@
+data "aws_security_group" "existing" {
+  name = "Devops-learning-SG"
+}
+
 resource "aws_eks_node_group" "main" {
   cluster_name    = aws_eks_cluster.main.name
   node_group_name = "${var.cluster_name}-${var.env}-node-group"
   node_role_arn   = aws_iam_role.main.arn
   subnet_ids      = aws_eks_cluster.main.vpc_config[0].subnet_ids
-#   instance_types  = var.node_group_instance_types
+  instance_types  = var.node_group_instance_types
 
   launch_template {
-    id      = aws_launch_template.node.id
+    id      = data.aws_launch_template.existing.id
     version = "$Latest"
   }
 
