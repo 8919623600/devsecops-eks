@@ -15,6 +15,6 @@ else
    echo -e "\e[32m Terraform $action completed successfully! \e[0m"
 fi
 
-echo " aws eks update-kubeconfig \
-  --region us-east-1 \
+echo " aws eks update-kubeconfig \ /n
+  --region us-east-1 \ /n
   --name robodefense-cluster-test " 
